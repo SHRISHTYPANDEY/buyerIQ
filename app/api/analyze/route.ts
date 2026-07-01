@@ -1,5 +1,9 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
+console.log("Gemini Key Exists:", !!process.env.GEMINI_API_KEY);
+console.log("Gemini Key Prefix:", process.env.GEMINI_API_KEY?.slice(0, 10));
+console.log("Gemini Key Length:", process.env.GEMINI_API_KEY?.length);
+
 const genAI = new GoogleGenerativeAI(
   process.env.GEMINI_API_KEY!
 );
