@@ -9,6 +9,11 @@ const genAI = new GoogleGenerativeAI(
 );
 
 export async function POST(req: Request) {
+    console.log("=== GEMINI ENV CHECK ===");
+  console.log("Exists:", !!process.env.GEMINI_API_KEY);
+  console.log("Prefix:", process.env.GEMINI_API_KEY?.slice(0, 10));
+  console.log("Length:", process.env.GEMINI_API_KEY?.length);
+
   try {
     const body = await req.json();
 
